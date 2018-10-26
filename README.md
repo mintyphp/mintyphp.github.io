@@ -15,8 +15,6 @@ This is the documentation of the MindaPHP framework.
 * [API](api.md)
 * [Webservers](webservers.md)
 
-# Overview
-
 ## Philosophy
 
 MindaPHP aims to be a full-stack framework that is:
