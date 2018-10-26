@@ -1,5 +1,7 @@
 # Structure
 
+This is the directory structure of a project:
+
 ```
 .
 ├── config     Configuration of the framework
