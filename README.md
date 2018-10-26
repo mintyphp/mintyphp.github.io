@@ -2,19 +2,6 @@
 
 This is the documentation of the MindaPHP framework.
 
-* [Structure](structure.md)
-* [Functions](functions.md)
-* [Router](router.md)
-* [Buffer](buffer.md)
-* [Flash](flash.md)
-* [Database](database.md)
-* [Curl](curl.md)
-* [Cache](cache.md)
-* [Session](session.md)
-* [Authenticate](authenticate.md)
-* [API](api.md)
-* [Webservers](webservers.md)
-
 ## Philosophy
 
 MindaPHP aims to be a full-stack framework that is:
@@ -114,3 +101,18 @@ If too many concurrent requests happen, they will be slowed down to avoid overlo
 There is a debug mode that enables the web debug toolbar. This toolbar gives you access to the debugger.
 The debugger shows you everything you need to know about the last 10 requests.
 Loaded files, chosen routes, executed queries and many more things can be found.
+
+## Read more
+
+* [Structure](structure.md)
+* [Functions](functions.md)
+* [Router](router.md)
+* [Buffer](buffer.md)
+* [Flash](flash.md)
+* [Database](database.md)
+* [Curl](curl.md)
+* [Cache](cache.md)
+* [Session](session.md)
+* [Authenticate](authenticate.md)
+* [API](api.md)
+* [Webservers](webservers.md)
