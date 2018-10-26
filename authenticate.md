@@ -1,6 +1,6 @@
 # Authenticate
 
-In "vendor/mindaphp/core/Auth.php" you find 3 functions that you can use anywhere.
+In the "Auth" class you find 3 functions that you can use anywhere.
 
 ## Login
 
@@ -50,7 +50,7 @@ if (Auth::register($username, $password)) {
 
 # Passwordless
 
-In "vendor/mindaphp/core/NoPassAuth.php" you find 4 functions that you can use anywhere.
+In the "NoPassAuth" class you find 4 functions that you can use anywhere.
 
 ## Token
 
