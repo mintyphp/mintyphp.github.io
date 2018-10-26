@@ -104,6 +104,8 @@ Loaded files, chosen routes, executed queries and many more things can be found.
 
 ## Read more
 
+There is more information available on the following topics:
+
 * [Structure](structure.md)
 * [Functions](functions.md)
 * [Router](router.md)
