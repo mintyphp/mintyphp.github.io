@@ -7,10 +7,10 @@ The following webservers have been tested:
 ```
 <VirtualHost *:80>
         ServerAdmin webmaster@localhost
-        ServerName mindaphp.dev
+        ServerName mintyphp.dev
 
-        DocumentRoot /home/maurits/public_html/mindaphp/web
-        <Directory /home/maurits/public_html/mindaphp/web>
+        DocumentRoot /home/maurits/public_html/mintyphp/web
+        <Directory /home/maurits/public_html/mintyphp/web>
                 AllowOverride All
         </Directory>
 
@@ -28,7 +28,7 @@ The following webservers have been tested:
 Benchmarks:
 
 ```
-ab -n 2000 -c 10 http://mindaphp.dev/hello/world
+ab -n 2000 -c 10 http://mintyphp.dev/hello/world
 Requests per second:    3948.10 [#/sec] (mean)
 ```
 
@@ -43,12 +43,12 @@ sudo apt-get install php-fpm
 Configure Nginx:
 
 ```
-$ cat /etc/nginx/sites-enabled/mindaphp
+$ cat /etc/nginx/sites-enabled/mintyphp
 server {
     listen 80;
-    server_name mindaphp.dev;
+    server_name mintyphp.dev;
 
-    root /home/maurits/public_html/mindaphp/web;
+    root /home/maurits/public_html/mintyphp/web;
     try_files $uri @proxy;
 
     location ~ \.php$ {
@@ -73,6 +73,6 @@ server {
 Benchmarks:
 
 ```
-ab -n 2000 -c 10 http://mindaphp.dev/hello/world
+ab -n 2000 -c 10 http://mintyphp.dev/hello/world
 Requests per second:    2836.15 [#/sec] (mean)
 ```

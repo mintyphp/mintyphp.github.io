@@ -1,10 +1,10 @@
-# MindaPHP Documentation
+# MintyPHP Documentation
 
-This is the documentation of the MindaPHP framework.
+This is the documentation of the MintyPHP framework.
 
 ## Philosophy
 
-MindaPHP aims to be a full-stack framework that is:
+MintyPHP aims to be a full-stack framework that is:
 
 1.  Easy to learn (and debug)
 2.  Secure by design
