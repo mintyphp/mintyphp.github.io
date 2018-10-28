@@ -1,4 +1,8 @@
-# Authenticate
+---
+layout: page
+title: Authentication
+permalink: /docs/authentication/
+---
 
 In the "Auth" class you find 3 functions that you can use anywhere.
 

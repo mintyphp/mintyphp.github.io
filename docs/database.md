@@ -1,4 +1,8 @@
-# Database
+---
+layout: page
+title: Database
+permalink: /docs/database/
+---
 
 This class provides 8 public methods and the parameters are:
 

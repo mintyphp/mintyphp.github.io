@@ -1,4 +1,8 @@
-# Webservers
+---
+layout: page
+title: Webservers
+permalink: /docs/webservers/
+---
 
 The following webservers have been tested:
 

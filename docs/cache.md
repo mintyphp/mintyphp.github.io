@@ -1,4 +1,8 @@
-# Cache
+---
+layout: page
+title: Cache
+permalink: /docs/cache/
+---
 
 This class is for using Memcache. It provides 7 public methods.
 

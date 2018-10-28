@@ -1,4 +1,8 @@
-# Session
+---
+layout: page
+title: Session
+permalink: /docs/session/
+---
 
 The instance is stored in the global "Session" class.
 

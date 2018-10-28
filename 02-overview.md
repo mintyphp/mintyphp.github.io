@@ -1,22 +1,11 @@
-# MintyPHP Documentation
+---
+layout: page
+title: Overview
+permalink: /overview/
+menu: true
+---
 
 This is the documentation of the MintyPHP framework.
-
-## Philosophy
-
-MintyPHP aims to be a full-stack framework that is:
-
-1.  Easy to learn (and debug)
-2.  Secure by design
-3.  Light-weight
-
-By design, it does:
-
-1.  … have one variable scope for all layers.
-2.  … require you to write SQL queries (no ORM).
-3.  … use PHP as a templating language.
-
-Mainly to make it easy to learn for PHP developers.
 
 ## Presentation/logic separation
 
@@ -101,20 +90,3 @@ If too many concurrent requests happen, they will be slowed down to avoid overlo
 There is a debug mode that enables the web debug toolbar. This toolbar gives you access to the debugger.
 The debugger shows you everything you need to know about the last 10 requests.
 Loaded files, chosen routes, executed queries and many more things can be found.
-
-## Read more
-
-There is more information available on the following topics:
-
-* [Structure](structure.md)
-* [Functions](functions.md)
-* [Router](router.md)
-* [Buffer](buffer.md)
-* [Flash](flash.md)
-* [Database](database.md)
-* [Curl](curl.md)
-* [Cache](cache.md)
-* [Session](session.md)
-* [Authenticate](authenticate.md)
-* [API](api.md)
-* [Webservers](webservers.md)

@@ -1,4 +1,8 @@
-# Router
+---
+layout: page
+title: Router
+permalink: /docs/router/
+---
 
 The instance is stored in the global "Router" class.
 

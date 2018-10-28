@@ -1,4 +1,8 @@
-# Functions
+---
+layout: page
+title: Functions
+permalink: /docs/functions/
+---
 
 The two "shortcut" functions "d()" and "e()" can be used anywhere in your application.
 

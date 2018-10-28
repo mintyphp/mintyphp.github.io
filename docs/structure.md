@@ -1,4 +1,8 @@
-# Structure
+---
+layout: page
+title: Structure
+permalink: /docs/structure/
+---
 
 This is the directory structure of a project:
 

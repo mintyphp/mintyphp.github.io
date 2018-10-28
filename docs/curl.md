@@ -1,4 +1,8 @@
-# Curl
+---
+layout: page
+title: Curl
+permalink: /docs/curl/
+---
 
 This class is for calling a HTTP API using Curl. It provides 2 public methods.
 

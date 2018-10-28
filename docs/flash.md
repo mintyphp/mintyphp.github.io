@@ -1,4 +1,8 @@
-# Flash
+---
+layout: page
+title: Flash
+permalink: /docs/flash/
+---
 
 The instance is stored in the global "Flash" class.
 
