@@ -9,36 +9,36 @@ This is a reference of the all global variables and functions.
 
 ## Standard
 
-| Type    | Function                           | Location      | Purpose         |
-| ------- | ---------------------------------- | ------------- | --------------- | 
-|         | e($variable)                       | *.phtml       | Output string   |
-|         | d($variable)                       | *             | Debugging       |
-| array   | DB::select($sql,...)               | *.php         | Database query  |
-| array   | DB::selectOne($sql,...)            | *.php         | Database query  |
-| string  | DB::selectValue($sql,...)          | *.php         | Database query  |
-| array   | DB::selectPairs($sql,...)          | *.php         | Database query  |
-| array   | DB::selectValues($sql,...)         | *.php         | Database query  |
-| integer | DB::insert($sql,...)               | *.php         | Database query  |
-| integer | DB::update($sql,...)               | *.php         | Database query  |
-| integer | DB::delete($sql,...)               | *.php         | Database query  |
-| array   | Curl::call($method,$url,$data)     | *.php         | Curl API call   |
-| array   | Curl::navigate($method,$url,$data) | *.php         | Curl API call   |
-| bool    | Auth::login($username,$password)   | *.php         | Logging in      |
-| bool    | Auth::logout()                     | *.php         | Logging out     |
-| bool    | Auth::register($username,$password)| *.php         | Adding users    |
-|         | Flash::set($type,$message)         | *.php         | Flash message   |
-| array   | Flash::get()                       | *.php         | Flash message   |
-|         | Router::addRoute($req,$loc)        | routes.php    | Routing         |
-|         | Router::redirect($url)             | *.php         | Redirection     |
-|         | Router::json($object)              | *.phtml       | Return JSON     |
-| string  | Session::getCsrfInput()            | *.phtml       | Form security   |
+| Function                                    | Location      | Purpose         |
+| ------------------------------------------- | ------------- | --------------- | 
+| `e($variable)                               ` | *.phtml       | Output string   |
+| `d($variable)                               ` | *             | Debugging       |
+| `DB::select($sql,...):array                 ` | *.php         | Database query  |
+| `DB::selectOne($sql,...):array              ` | *.php         | Database query  |
+| `DB::selectValue($sql,...):string           ` | *.php         | Database query  |
+| `DB::selectPairs($sql,...):array            ` | *.php         | Database query  |
+| `DB::selectValues($sql,...):array           ` | *.php         | Database query  |
+| `DB::insert($sql,...):integer               ` | *.php         | Database query  |
+| `DB::update($sql,...):integer               ` | *.php         | Database query  |
+| `DB::delete($sql,...):integer               ` | *.php         | Database query  |
+| `Curl::call($method,$url,$data):array       ` | *.php         | Curl API call   |
+| `Curl::navigate($method,$url,$data):array   ` | *.php         | Curl API call   |
+| `Auth::login($username,$password):bool      ` | *.php         | Logging in      |
+| `Auth::logout():bool                        ` | *.php         | Logging out     |
+| `Auth::register($username,$password):bool   ` | *.php         | Adding users    |
+| `Flash::set($type,$message)                 ` | *.php         | Flash message   |
+| `Flash::get():array                         ` | *.php         | Flash message   |
+| `Router::addRoute($req,$loc)                ` | routes.php    | Routing         |
+| `Router::redirect($url)                     ` | *.php         | Redirection     |
+| `Router::json($object)                      ` | *.phtml       | Return JSON     |
+| `Session::getCsrfInput():string             ` | *.phtml       | Form security   |
 
 ## Advanced
 
-| Type    | Function                           | Location      | Purpose         |
-| ------- | ---------------------------------- | ------------- | --------------- | 
-| bool    | Loader::register($path,$namespace) | loader.php    | Loading classes |
-|         | Buffer::set($name,$string)         | *.php         | Set raw HTML    |
-| bool    | Buffer::get($name)                 | *.phtml       | Get raw HTML    |
-|         | Buffer::start($name)               | *.phtml       | Nested template |
-|         | Buffer::end($name)                 | *.phtml       | Nested template |
+| Function                                    | Location      | Purpose         |
+| ------------------------------------------- | ------------- | --------------- | 
+| `Loader::register($path,$namespace):bool    ` | loader.php    | Loading classes |
+| `Buffer::set($name,$string)                 ` | *.php         | Set raw HTML    |
+| `Buffer::get($name):bool                    ` | *.phtml       | Get raw HTML    |
+| `Buffer::start($name)                       ` | *.phtml       | Nested template |
+| `Buffer::end($name)                         ` | *.phtml       | Nested template |
