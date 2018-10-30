@@ -5,7 +5,9 @@ permalink: /installation/
 menu: true
 ---
 
-MintyPHP is simple and easy to install. The minimum requirements are a web server and a copy of MintyPHP, that’s it! MintyPHP will run on a variety of web servers and operating systems.
+MintyPHP is simple and easy to install. 
+The minimum requirements are a web server and a copy of MintyPHP, that’s it! 
+MintyPHP will run on a variety of web servers and operating systems.
 
 ## Requirements
 
@@ -13,7 +15,8 @@ MintyPHP is simple and easy to install. The minimum requirements are a web serve
 - PHP 5.4.0 or greater
 - mysqli PHP extension
 
-While a database engine isn’t required, most applications will utilize one. MintyPHP supports MariaDB (and other MySQL compatible databases).
+While a database engine isn’t required, most applications will utilize one. 
+MintyPHP supports MariaDB (and other MySQL compatible databases).
 
 ## Download
 
@@ -30,4 +33,5 @@ Unzip/untar the archive and run the start.sh script with the following command:
 bash start.sh
 ```
 
-It should download composer.phar and install the latest versions of all dependencies. Then it should start the application in debug mode.
+It should download composer.phar and install the latest versions of all dependencies. 
+Then it should start the application in debug mode on [http://localhost:8000/](http://localhost:8000/).
