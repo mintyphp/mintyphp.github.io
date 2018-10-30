@@ -20,7 +20,7 @@ Mainly to make it easy to learn for PHP developers.
 
 <br/>
 
-<a href='/installation/' style="text-decoration: none; color: white; background-color: #51d927; padding: 10px 20px;">Download</a>
+<a href='/installation/' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px;">Download</a>
 
 <br/>
 
