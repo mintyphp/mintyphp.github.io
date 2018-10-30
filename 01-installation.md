@@ -30,8 +30,10 @@ You can download the latest version as a zip or tarball from:
 Unzip/untar the archive and run the start.sh script with the following command:
 
 ```
+unzip mintyphp-2.0.1.zip
+cd mintyphp-2.0.1
 bash start.sh
 ```
 
-It should download composer.phar and install the latest versions of all dependencies. 
+It should download composer.phar and adminer and install the latest versions of all PHP dependencies. 
 Then it should start the application in debug mode on [http://localhost:8000/](http://localhost:8000/).
