@@ -15,3 +15,16 @@ MintyPHP is simple and easy to install. The minimum requirements are a web serve
 
 While a database engine isn’t required, most applications will utilize one. MintyPHP supports MariaDB (and other MySQL compatible databases).
 
+## Download
+
+You can download the latest version as a zip or tarball from:
+
+<a href='https://github.com/mintyphp/mintyphp/zipball/master' style="text-decoration: none; color: #111; font-weight: bold; background-color: #51d927; padding: 10px 20px;">Download</a>
+
+Unzip/untar the archive and run the start.sh script with the following command:
+
+```
+bash start.sh
+```
+
+It should download composer.phar and install the latest versions of all dependencies. Then it should start the application in debug mode.
