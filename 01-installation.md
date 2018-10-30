@@ -37,3 +37,8 @@ bash start.sh
 
 It should download composer.phar and adminer and install the latest versions of all PHP dependencies. 
 Then it should start the application in debug mode on [http://localhost:8000/](http://localhost:8000/).
+
+## Configure
+
+The configurator will start. You need to enter your MySQL credentials and press "Test and Save".
+Now the application starts and you can explore the demo functionality on your own machine.
