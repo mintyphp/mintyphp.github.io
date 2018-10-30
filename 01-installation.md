@@ -19,7 +19,10 @@ While a database engine isn’t required, most applications will utilize one. Mi
 
 You can download the latest version as a zip or tarball from:
 
-<a href='https://github.com/mintyphp/mintyphp/zipball/master' style="text-decoration: none; color: #111; font-weight: bold; background-color: #51d927; padding: 10px 20px;">Download</a>
+<br>
+<a href='http://github.com/mintyphp/mintyphp/archive/v2.0.1.zip' style="text-decoration: none; color: #111; font-weight: bold; background-color: #51d927; padding: 10px 20px;">Download MintyPHP v2.0.1</a>
+<br>
+<br>
 
 Unzip/untar the archive and run the start.sh script with the following command:
 
