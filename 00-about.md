@@ -24,10 +24,10 @@ Mainly to make it easy to learn for PHP developers.
 
 <br/>
 
-Blog 1: http://www.leaseweblabs.com/2013/10/mindaphp-new-php-framework-optimized-learning/
+Blog 1: [http://www.leaseweblabs.com/2013/10/mindaphp-new-php-framework-optimized-learning/](http://www.leaseweblabs.com/2013/10/mindaphp-new-php-framework-optimized-learning/)
 
-Blog 2: https://tqdev.com/2018-mindaphp-now-on-packagist
+Blog 2: [https://tqdev.com/2018-mindaphp-now-on-packagist](https://tqdev.com/2018-mindaphp-now-on-packagist)
 
-Demo: http://maurits.server.nlware.com/
+Demo: [http://maurits.server.nlware.com/](http://maurits.server.nlware.com/)
 
-Github: https://github.com/mintyphp/mintyphp
+Github: [https://github.com/mintyphp/mintyphp](https://github.com/mintyphp/mintyphp)
