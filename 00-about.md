@@ -18,4 +18,4 @@ By design, it does:
 
 Mainly to make it easy to learn for PHP developers.
 
-<br/><a href='/installation/' style="text-decoration: none; color: black; font-weight: bold; background-color: #51d927; padding: 10px 20px;">Download</a>
+<br/><a href='/installation/' style="text-decoration: none; color: #111; font-weight: bold; background-color: #51d927; padding: 10px 20px;">Download</a>
