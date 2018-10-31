@@ -9,7 +9,7 @@ There is an overview document available:
 
 * [Overview](/overview)
 
-There is more information available on the following topics:
+And there is more information available about specific topics:
 
 * [Structure](/docs/structure)
 * [Functions](/docs/functions)
