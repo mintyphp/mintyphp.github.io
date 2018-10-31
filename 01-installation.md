@@ -20,14 +20,14 @@ MintyPHP supports MariaDB (and other MySQL compatible databases).
 
 ## Download
 
-You can download the latest version as a zip or tarball from:
+You can download the latest version as a zip archive by clicking the button below.
 
 <br>
 <a href='http://github.com/mintyphp/mintyphp/archive/v2.0.1.zip' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px;">Download MintyPHP v2.0.1</a>
 <br>
 <br>
 
-Unzip/untar the archive and run the start.sh script with the following command:
+Unzip the archive and run the start.sh script with the following command:
 
 ```
 unzip mintyphp-2.0.1.zip

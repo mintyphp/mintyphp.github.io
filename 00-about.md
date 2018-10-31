@@ -20,14 +20,13 @@ Mainly to make it easy to learn for PHP developers.
 
 <br/>
 
-<a href='/installation/' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px;">Download</a>
+<a href='/installation/' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px; margin-right: 30px;">Download</a>
+<a href='http://maurits.server.nlware.com/' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px; margin-right: 30px;">Demo</a>
+<a href='https://github.com/mintyphp/mintyphp' style="text-decoration: none; color: white; background-color: #41c917; padding: 10px 20px; margin-right: 30px;">Github</a>
 
 <br/>
 
-Blog 1: [https://www.leaseweb.com/labs/2013/10/mindaphp-new-php-framework-optimized-learning/](https://www.leaseweb.com/labs/2013/10/mindaphp-new-php-framework-optimized-learning/)
+## External links
 
-Blog 2: [https://tqdev.com/2018-mindaphp-now-on-packagist](https://tqdev.com/2018-mindaphp-now-on-packagist)
-
-Demo: [http://maurits.server.nlware.com/](http://maurits.server.nlware.com/)
-
-Github: [https://github.com/mintyphp/mintyphp](https://github.com/mintyphp/mintyphp)
+- [MindaPHP: a new PHP framework optimized for learning](https://www.leaseweb.com/labs/2013/10/mindaphp-new-php-framework-optimized-learning/)
+- [MintyPHP now on packagist!](https://tqdev.com/2018-mindaphp-now-on-packagist)
