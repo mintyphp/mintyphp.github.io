@@ -20,5 +20,5 @@ And there is more information available about specific topics:
 * [Curl](/docs/curl)
 * [Cache](/docs/cache)
 * [Session](/docs/session)
-* [Authenticate](/docs/authentication)
+* [Authentication](/docs/authentication)
 * [Webservers](/docs/webservers)
