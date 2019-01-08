@@ -23,7 +23,7 @@ MintyPHP supports MariaDB (and other MySQL compatible databases).
 You can download the latest version as a zip archive by clicking the button below.
 
 <br>
-<a href='http://github.com/mintyphp/mintyphp/archive/v2.0.3.zip' style="text-decoration: none; color: white; background-color: #21a900; padding: 10px 20px;">Download MintyPHP v</a>
+<a href='http://github.com/mintyphp/mintyphp/archive/v2.0.3.zip' style="text-decoration: none; color: white; background-color: #21a900; padding: 10px 20px;">Download MintyPHP v2.0.3</a>
 <br>
 <br>
 
