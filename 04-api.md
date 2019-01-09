@@ -37,7 +37,6 @@ This is a reference of the all global variables and functions.
 
 | Function                                    | Location      | Purpose         |
 | ------------------------------------------- | ------------- | --------------- | 
-| `Loader::register($path,$namespace):bool    ` | loader.php    | Loading classes |
 | `Buffer::set($name,$string)                 ` | *.php         | Set raw HTML    |
 | `Buffer::get($name):bool                    ` | *.phtml       | Get raw HTML    |
 | `Buffer::start($name)                       ` | *.phtml       | Nested template |
