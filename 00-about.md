@@ -21,7 +21,6 @@ Mainly to make it easy to learn for PHP developers.
 <br/>
 
 <a href='/installation/' style="text-decoration: none; color: white; background-color: #21a900; padding: 10px 20px; margin-right: 30px;">Download</a>
-<a href='http://maurits.server.nlware.com/' style="text-decoration: none; color: white; background-color: #21a900; padding: 10px 20px; margin-right: 30px;">Demo</a>
 <a href='https://github.com/mintyphp/mintyphp' style="text-decoration: none; color: white; background-color: #21a900; padding: 10px 20px; margin-right: 30px;">Github</a>
 
 <br/>
