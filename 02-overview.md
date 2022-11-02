@@ -31,7 +31,7 @@ The "phtml" files can have a corresponding "php" file. The filename is construct
 This means that when you access the URL "/customers/23", the router will match the "customers" page and PHP variable "$id" is set to "23".
 You may also set parameters using a get parameter in the query string. 
 This means that when you access the URL "/customers?id=23", the router will match the "customers" page and PHP variable "$id" is set to "23".
-If you provide too many arguments the page will automatically reload without the extra params.
+If you provide too many arguments the page will ignore the extra params.
 If you provide not enough parameters, then the missing parameters will be set to NULL. 
 
 The router has a "addRoute" method, that allows you to map certain URL's to other URL's.
