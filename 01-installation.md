@@ -12,7 +12,7 @@ MintyPHP will run on a variety of web servers and operating systems.
 ## Requirements
 
 - Apache or nginx (rewrite is not required)
-- PHP 5.4.0 or greater
+- PHP 7 or greater
 - mysqli PHP extension
 
 While a database engine isn’t required, most applications will utilize one. 
