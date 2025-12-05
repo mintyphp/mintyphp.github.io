@@ -127,7 +127,7 @@ This is a reference of all global variables and functions.
 | `I18n::monthName($month):string           ` | *.php         | Get month name         |
 | `I18n::datetimeShort($str):string         ` | *.php         | Format datetime short  |
 
-## TOTP (Two-Factor Authentication)
+## Two-Factor Authentication
 
 | Function                                       | Location      | Purpose                |
 | ---------------------------------------------- | ------------- | ---------------------- | 
