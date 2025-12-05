@@ -206,18 +206,3 @@ Example:
 ```
 $redirect = Router::getRedirect();
 ```
-
-## Apply Routes
-
-```
-Router::applyRoutes(): void
-```
-
-Apply route mappings to the current request. Typically called from `config/router.php`.
-
-Example:
-
-```
-Router::$routes = ['/' => 'home'];
-Router::applyRoutes();
-```
