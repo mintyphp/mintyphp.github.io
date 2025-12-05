@@ -14,7 +14,7 @@ MintyPHP will run on a a linux web server running PHP + MySQL + Memcache
 - Apache or nginx (rewrite is not required)
 - PHP 8 or greater
 - mysqli PHP extension
-- memcache PHP extension
+- memcached PHP extension
 
 While a database engine isn’t required, most applications will utilize one. 
 MintyPHP supports MariaDB (and other MySQL compatible databases).
