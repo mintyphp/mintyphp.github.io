@@ -7,17 +7,13 @@ menu: true
 
 MintyPHP is simple and easy to install. 
 The minimum requirements are a web server and a copy of MintyPHP, that’s it! 
-MintyPHP will run on any Linux web server running PHP + MariaDB + Memcache
+MintyPHP will run on any Linux (LAMP) web server running PHP + MySQL + Memcache.
 
 ## Requirements
 
-- Apache or nginx (rewrite is not required)
 - PHP 8 or greater
-- mysqli PHP extension
-- memcached PHP extension
-
-While a database engine isn’t required, most applications will utilize one. 
-MintyPHP supports MariaDB (and other MySQL compatible databases).
+- mysqli PHP extension (for MariaDB)
+- memcached PHP extension (for MemcacheD)
 
 ## Download
 
