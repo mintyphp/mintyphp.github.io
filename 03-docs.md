@@ -15,7 +15,6 @@ And there is more information available about specific topics:
 * [Functions](/docs/functions)
 * [Router](/docs/router)
 * [Buffer](/docs/buffer)
-* [Flash](/docs/flash)
 * [Database](/docs/database)
 * [Curl](/docs/curl)
 * [Cache](/docs/cache)
