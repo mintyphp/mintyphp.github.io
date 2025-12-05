@@ -4,43 +4,83 @@ title: Curl
 permalink: /docs/curl/
 ---
 
-This class is for calling a HTTP API using Curl. It provides 2 public methods.
+The "Curl" class provides methods for making HTTP requests with support for caching, redirects, cookies, and various HTTP methods.
 
 ## Call
 
 ```
-Curl::call($method,$url,$data,$headers,$options)
+Curl::call(string $method, string $url, $data = '', array $headers = [], array $options = []): array
 ```
 
-Executes Curl call:
+Make an HTTP request. The `$data` parameter can be either an array (for form data) or a string (for raw POST). 
+
+Returns an array with `status`, `headers`, `data`, and `url`.
+
+Example:
 
 ```
-$result = Curl::call('GET','http://www.bing.com/search',array('q'=>$query));
+$result = Curl::call('GET', 'http://www.bing.com/search', ['q' => $query]);
+echo "Status: " . $result['status'];
+echo "Body: " . $result['data'];
+print_r($result['headers']);
 ```
 
-Note that the $data, $headers and $options parameters are optional. The $data parameter can either be an array (normally) or a string (for raw POST). In the view (.phtml) file we can show the returned status ('200' on success), the data (returned body) and the response headers:
+POST request example:
 
 ```
-<?php e($result['status']);?>
-<?php e($result['data']);?>
-<?php e(var_export($result['headers'], true));?>
-
+$result = Curl::call('POST', 'https://api.example.com/users', [
+  'name' => 'John Doe',
+  'email' => 'john@example.com'
+], [
+  'Authorization' => 'Bearer token123'
+]);
 ```
 
 ## Navigate
 
 ```
-Curl::navigate($method,$url,$data,$headers,$options)
+Curl::navigate(string $method, string $url, $data = '', array $headers = [], array $options = []): array
 ```
 
-Executes Curl call (and follow redirects):
+Make an HTTP request with automatic redirects. Follows redirects and returns the final URL in the response.
+
+Returns an array with `status`, `headers`, `data`, and `url`.
+
+Example:
 
 ```
-$result = Curl::navigate('GET','http://www.bing.com/search',array('q'=>$query));
+$result = Curl::navigate('GET', 'http://www.bing.com/search', ['q' => $query]);
+echo "Final URL: " . $result['url'];
+echo "Content: " . $result['data'];
 ```
 
-Note that the $data, $headers and $options parameters are optional. In the view (.phtml) file we can show the effective URL (of the last redirect):
+## Call Cached
 
 ```
-<?php e($result['url']);?>
+Curl::callCached(int $expire, string $method, string $url, mixed $data, array $headers = [], array $options = []): array
+```
+
+Make a cached HTTP request. The response is cached for the specified number of seconds.
+
+Example:
+
+```
+// Cache for 1 hour
+$result = Curl::callCached(3600, 'GET', 'https://api.example.com/data', ['id' => 123]);
+```
+
+## Navigate Cached
+
+```
+Curl::navigateCached(int $expire, string $method, string $url, mixed $data, array $headers = [], array $options = []): array
+```
+
+Make a cached HTTP request with automatic redirects. The response is cached for the specified number of seconds.
+
+Example:
+
+```
+// Cache for 30 minutes
+$result = Curl::navigateCached(1800, 'GET', 'https://example.com/redirect', []);
+echo "Final URL: " . $result['url'];
 ```

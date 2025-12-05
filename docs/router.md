@@ -4,92 +4,220 @@ title: Router
 permalink: /docs/router/
 ---
 
-The instance is stored in the global "Router" class.
-
-## Routes
-
-```
-Router::addRoute($request, $location)
-```
-
-This should be called from the router configuration (in "config/router.php").
-Typically this is used to route the empty requested URL "/" to a specific location.
-It does not update the URL in the address bar.
-If you do want to update the URL in the address bar you should use the "redirect" function.
-
-## Request
-
-```
-Router::getRequest()
-```
-
-With this call you can read the requested URL.
-Normally this is the same as "$_SERVER['REQUEST_URI']".
-
-## URL
-
-```
-Router::getUrl()
-```
-
-With this call you can find the effective routed URL.
-This does not contain parameters and/or trailing slashes.
-It does also show the redirected target, not the entered URL.
-
-```
-Router::getBaseUrl()
-```
-
-With this call you can find the routed URL prefix.
-When not loaded in a subdirectory this should be "/".
-It can be configured in the "config/config.php" file in the "Router" section.
-
-## View
-
-```
-Router::getView()
-```
-
-This gets the path to the view file that is loaded.
-For example on this page it returns: "pages/docs/router(docs).phtml".
-
-## Action
-
-```
-Router::getAction()
-```
-
-This gets the path to the action file that is loaded.
-For example on this page it returns: false.
-
-## Template
-
-```
-Router::getTemplateView()
-```
-
-This gets the path to the template view file that is loaded.
-For example on this page it returns: "templates/docs.phtml".
-
-```
-Router::getTemplateAction()
-```
-
-This gets the path to the template action file that is loaded.
-For example on this page it returns: false.
+The "Router" class handles URL routing in MintyPHP, mapping incoming requests to views, actions, and templates based on defined routes and file structure. Supports redirection, JSON responses, and file downloads.
 
 ## Redirect
 
 ```
-Router::redirect($url)
+Router::redirect(string $url, bool $permanent = false): void
 ```
 
-This "redirect" function redirects directly to another URL.
+Redirect to a URL. Set `$permanent` to true for a 301 redirect.
+
+Example:
+
+```
+if (!Auth::login($username, $password)) {
+  Router::redirect('login');
+}
+```
 
 ## JSON
 
 ```
-Router::json($object)
+Router::json(mixed $object): void
 ```
 
-This "json" function outputs a JSON object as a full response.
+Output a JSON response and terminate execution.
+
+Example:
+
+```
+$data = ['status' => 'success', 'users' => $users];
+Router::json($data);
+```
+
+## Download
+
+```
+Router::download(string $filename, string $data): void
+```
+
+Initiate file download with provided data and terminate execution.
+
+Example:
+
+```
+$csv = "Name,Email\nJohn,john@example.com";
+Router::download('users.csv', $csv);
+```
+
+## File
+
+```
+Router::file(string $filename, string $filepath): void
+```
+
+Initiate file download from filesystem and terminate execution.
+
+Example:
+
+```
+Router::file('report.pdf', '/tmp/reports/report_2025.pdf');
+```
+
+## Get URL
+
+```
+Router::getUrl(): string
+```
+
+Get the matched URL path (view or action name with directory). This does not contain parameters or trailing slashes.
+
+Example:
+
+```
+$url = Router::getUrl(); // 'docs/router'
+```
+
+## Get Canonical
+
+```
+Router::getCanonical(): string
+```
+
+Get the canonical URL with parameters appended. Removes trailing 'index' from the URL if present.
+
+Example:
+
+```
+$canonical = Router::getCanonical();
+```
+
+## Get Request
+
+```
+Router::getRequest(): string
+```
+
+Get the current request URI. Normally this is the same as `$_SERVER['REQUEST_URI']`.
+
+Example:
+
+```
+$request = Router::getRequest(); // '/docs/router'
+```
+
+## Get Base URL
+
+```
+Router::getBaseUrl(): string
+```
+
+Get the base URL with protocol and host. When not loaded in a subdirectory this returns the site root URL.
+
+Example:
+
+```
+$base = Router::getBaseUrl(); // 'https://example.com/'
+```
+
+## Get View
+
+```
+Router::getView(): string
+```
+
+Get the matched view file path, or empty string if none.
+
+Example:
+
+```
+$view = Router::getView(); // 'pages/docs/router.phtml'
+```
+
+## Get Action
+
+```
+Router::getAction(): string
+```
+
+Get the matched action file path, or empty string if none.
+
+Example:
+
+```
+$action = Router::getAction(); // 'pages/docs/router.php'
+```
+
+## Get Template View
+
+```
+Router::getTemplateView(): string
+```
+
+Get the template view file path if it exists, or empty string if none.
+
+Example:
+
+```
+$template = Router::getTemplateView(); // 'templates/docs.phtml'
+```
+
+## Get Template Action
+
+```
+Router::getTemplateAction(): string
+```
+
+Get the template action file path if it exists, or empty string if none.
+
+Example:
+
+```
+$templateAction = Router::getTemplateAction(); // 'templates/docs.php'
+```
+
+## Get Parameters
+
+```
+Router::getParameters(): array
+```
+
+Get parameters extracted from the URL.
+
+Example:
+
+```
+$params = Router::getParameters();
+echo $params['id']; // '123'
+```
+
+## Get Redirect
+
+```
+Router::getRedirect(): ?string
+```
+
+Get the redirect URL if one was set during routing, or null if no redirect.
+
+Example:
+
+```
+$redirect = Router::getRedirect();
+```
+
+## Apply Routes
+
+```
+Router::applyRoutes(): void
+```
+
+Apply route mappings to the current request. Typically called from `config/router.php`.
+
+Example:
+
+```
+Router::$routes = ['/' => 'home'];
+Router::applyRoutes();
+```

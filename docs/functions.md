@@ -4,7 +4,7 @@ title: Functions
 permalink: /docs/functions/
 ---
 
-The two "shortcut" functions "d()" and "e()" can be used anywhere in your application.
+The three "shortcut" functions "d()", "e()", and "t()" can be used anywhere in your application.
 
 ## Escaped echo
 
@@ -15,6 +15,25 @@ e($variable)
 In the views one should use "<?php e($variable);?>" to echo and NOT the normal "echo".
 This function escapes the variable (using "htmlspecialchars" with ENT_QUOTES flag and 'UTF-8' encoding)
 to prevent Cross-Site-Scripting (XSS) attacks.
+
+## Translate
+
+```
+t($id, $arg1, $arg2, ...)
+```
+
+The "t" (for translate) function translates a string ID to the localized text and supports `sprintf` 
+formatting for variable substitution. Translation files are loaded from `i18n/{domain}_{locale}.json`. 
+If the translation is not found, the ID is returned. Additional arguments are passed to `sprintf` for 
+formatting.
+
+Example:
+
+```
+echo t("Welcome to our site");
+echo t("Hello, %s", $username);
+echo t("You have %s item(s)", $count);
+```
 
 ## Debug
 

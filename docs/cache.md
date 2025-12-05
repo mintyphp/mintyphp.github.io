@@ -4,76 +4,143 @@ title: Cache
 permalink: /docs/cache/
 ---
 
-This class is for using Memcache. It provides 7 public methods.
+The "Cache" class provides caching operations using Memcached with support for debugging and monitoring.
 
 ## Get
 
 ```
-$var = Cache::get($key)
+Cache::get(string $key): mixed
 ```
 
-Returns previously stored data if an item with such key exists on the server at this moment.
-Returns the string associated with the key or an array of found key-value pairs when key is an array.
-Returns FALSE on failure, key is not found or key is an empty array.
+Retrieve a value from the cache. Returns the cached value, or false if not found.
+
+Example:
+
+```
+$user = Cache::get('user_123');
+if ($user !== false) {
+  // User data found in cache
+  echo "Welcome " . $user['name'];
+} else {
+  // Fetch from database and cache it
+  $user = DB::selectOne('users', 'id', 123);
+  Cache::set('user_123', $user, 3600);
+}
+```
 
 ## Set
 
 ```
-$success = Cache::set($key,$var,$expire=0)
+Cache::set(string $key, mixed $var, int $expire = 0): bool
 ```
 
-Stores an item var with key on the memcached server. Parameter expire is expiration time in seconds.
-If it's 0, the item never expires (but memcached server doesn't guarantee this item to be stored all the time,
-it could be deleted from the cache to make place for other items). Returns TRUE on success or FALSE on failure.
+Store a value in the cache (creates or updates). The expire parameter is the expiration time in seconds. If it's 0, the item never expires (but memcached server doesn't guarantee this item to be stored all the time, it could be deleted from the cache to make place for other items).
+
+Returns true on success or false on failure.
+
+Example:
+
+```
+$success = Cache::set('user_123', $userData, 3600);
+if ($success) {
+  // Data cached for 1 hour
+}
+```
 
 ## Delete
 
 ```
-$success = Cache::delete($key)
+Cache::delete(string $key): bool
 ```
 
-Deletes an item with the key. Returns TRUE on success or FALSE on failure.
+Delete a value from the cache. Returns true on success or false on failure.
+
+Example:
+
+```
+$success = Cache::delete('user_123');
+if ($success) {
+  // Cache entry removed
+}
+```
 
 ## Add
 
 ```
-$success = Cache::add($key,$var,$expire=0)
+Cache::add(string $key, mixed $var, int $expire = 0): bool
 ```
 
-Stores variable var with key only if such key doesn't exist at the server yet.
-Returns TRUE on success or FALSE on failure. Returns FALSE if such key already exist.
-For the rest add() behaves similarly to set().
+Add a value to the cache only if it doesn't already exist. Returns true on success, false on failure. Returns false if such key already exists.
+
+Example:
+
+```
+$success = Cache::add('user_lock_123', true, 60);
+if ($success) {
+  // Lock acquired
+  processUser(123);
+  Cache::delete('user_lock_123');
+} else {
+  // Another process is working on this user
+}
+```
 
 ## Replace
 
 ```
-$success = Cache::replace($key,$var,$expire=0)
+Cache::replace(string $key, mixed $var, int $expire = 0): bool
 ```
 
-Should be used to replace value of existing item with key.
-Returns FALSE in the case that an item with such key doesn't exists.
-For the rest replace() behaves similarly to set().
-Returns TRUE on success or FALSE on failure.
+Replace a value in the cache only if it already exists. Returns false if an item with such key doesn't exist. Returns true on success or false on failure.
+
+Example:
+
+```
+$success = Cache::replace('user_123', $updatedUser, 3600);
+if ($success) {
+  // Cache updated
+} else {
+  // Key didn't exist, use set() instead
+  Cache::set('user_123', $updatedUser, 3600);
+}
+```
 
 ## Increment
 
 ```
-$var = Cache::increment($key,$value=1)
+Cache::increment(string $key, int $value = 1): int|false
 ```
 
-Increments value of an item by the specified value.
-If item specified by key was not numeric and cannot be converted to a number,
-it will change its value to the specified value.
-Method does not create an item if it doesn't already exist.
-Returns new items value on success or FALSE on failure.
+Increment a numeric value in the cache by the specified value. If the item specified by key was not numeric and cannot be converted to a number, it will change its value to the specified value. This method does not create an item if it doesn't already exist.
+
+Returns the new value on success or false on failure.
+
+Example:
+
+```
+$views = Cache::increment('page_views_home', 1);
+if ($views !== false) {
+  echo "Page viewed " . $views . " times";
+}
+```
 
 ## Decrement
 
 ```
-$var = Cache::decrement($key,$value=1)
+Cache::decrement(string $key, int $value = 1): int|false
 ```
 
-Decrements value of the item by value. Similarly to increment(),
-current value of the item is being converted to numerical and after that value is subtracted.
-Method does not create an item if it didn't exist.
-Returns item's new value on success or FALSE on failure.
+Decrement a numeric value in the cache by the specified value. Similarly to increment(), the current value of the item is converted to numerical and after that value is subtracted. This method does not create an item if it didn't exist.
+
+Returns the new value on success or false on failure.
+
+Example:
+
+```
+$remaining = Cache::decrement('api_limit_user_123', 1);
+if ($remaining !== false && $remaining > 0) {
+  // Process API request
+} else {
+  // Rate limit exceeded
+}
+```

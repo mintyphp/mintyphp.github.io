@@ -4,91 +4,164 @@ title: Database
 permalink: /docs/database/
 ---
 
-This class provides 8 public methods and the parameters are:
-
-These functions can be statically accessed from the global "DB" class.
+The "DB" class provides a secure interface for database operations using mysqli with prepared statements. Supports debugging, query logging, and automatic parameter binding.
 
 ## Select
 
 ```
-DB::select($sql,$arg1,$arg2,...)
+DB::select(string $query, mixed ...$params): array
 ```
 
-Executes SQL containing "?" symbols. Every questionmark must be matched by an extra argument. The following query retrieves all users that have an username starting with a 'M':
+Execute a SELECT query and return all rows. SQL queries use `?` placeholders that are automatically bound to the provided parameters.
+
+Example:
 
 ```
-$users = DB::select('select * from users where username LIKE ?','M%');
+$users = DB::select('SELECT * FROM users WHERE username LIKE ?', 'M%');
+foreach ($users as $user) {
+  echo $user['username'];
+}
 ```
 
-In the view (.phtml) file we can iterate over records and print the usernames in a HTML list using:
+## Select One
 
 ```
-<?php foreach ($users as $user): ?>
-<li><?php e($user['username']);?></li>
-<?php endforeach;?>
+DB::selectOne(string $query, mixed ...$params): array|false
 ```
 
-## Select one
+Execute a SELECT query and return the first row, or false if no result.
+
+Example:
 
 ```
-DB::selectOne($sql,$arg1,$arg2,...)
+$user = DB::selectOne('SELECT * FROM users WHERE username = ? LIMIT 1', $username);
+if ($user) {
+  echo "User ID: " . $user['id'];
+}
 ```
 
-Same as "records", but only returns the first record or false. Example:
+## Select Value
 
 ```
-$query = 'select * from users where username = ? limit 1';
-$user = DB::selectOne($query,$username);
+DB::selectValue(string $query, mixed ...$params): mixed
+```
+
+Execute a SELECT query and return a single value from the first column of the first row, or false if no result.
+
+Example:
+
+```
+$count = DB::selectValue('SELECT COUNT(*) FROM users WHERE active = ?', 1);
+echo "Active users: " . $count;
+```
+
+## Select Values
+
+```
+DB::selectValues(string $query, mixed ...$params): array
+```
+
+Execute a SELECT query and return an array of values from the first column.
+
+Example:
+
+```
+$usernames = DB::selectValues('SELECT username FROM users WHERE active = ?', 1);
+print_r($usernames); // ['john', 'jane', 'bob']
+```
+
+## Select Pairs
+
+```
+DB::selectPairs(string $query, mixed ...$params): array
+```
+
+Execute a SELECT query and return key-value pairs using the first column as keys and the second column as values.
+
+Example:
+
+```
+$userEmails = DB::selectPairs('SELECT id, email FROM users');
+echo $userEmails[123]; // 'user@example.com'
 ```
 
 ## Insert
 
 ```
-DB::insert()
+DB::insert(string $query, mixed ...$params): int
 ```
 
-Executes SQL "INSERT" statement and returns the "insert id" from the last executed SQL query. Example:
+Execute an INSERT query and return the last insert ID.
+
+Example:
 
 ```
-$query = 'insert into users (username,password,created) values (?,?,NOW())';
-$userId = DB::insert($query,$username,$password);
+$userId = DB::insert(
+  'INSERT INTO users (username, password, created) VALUES (?, ?, NOW())',
+  $username,
+  password_hash($password, PASSWORD_DEFAULT)
+);
+echo "New user ID: " . $userId;
 ```
 
 ## Update
 
 ```
-DB::update()
+DB::update(string $query, mixed ...$params): int
 ```
 
-Executes SQL "UPDATE" statement and returns the "affected rows" from the last executed SQL query. Example:
+Execute an UPDATE query and return the number of affected rows.
+
+Example:
 
 ```
-$query = 'update users set username = ? where id = ?';
-$affectedRows = DB::update($query,$username,$userId);
+$affectedRows = DB::update(
+  'UPDATE users SET username = ? WHERE id = ?',
+  $newUsername,
+  $userId
+);
+echo "Updated " . $affectedRows . " rows";
 ```
 
 ## Delete
 
 ```
-DB::delete()
+DB::delete(string $query, mixed ...$params): int
 ```
 
-Executes SQL "DELETE" statement and returns the "affected rows" from the last executed SQL query. Example:
+Execute a DELETE query and return the number of affected rows.
+
+Example:
 
 ```
-$query = 'delete from users where username = ?';
-$affectedRows = DB::delete($query,$username);
+$affectedRows = DB::delete('DELETE FROM users WHERE username = ?', $username);
+echo "Deleted " . $affectedRows . " rows";
 ```
 
 ## Query
 
 ```
-DB::query()
+DB::query(string $query, mixed ...$params): mixed
 ```
 
-Executes other SQL statements and returns a boolean indicating success (true) or failure (false). Example:
+Execute a query with optional debugging. Returns query result (array for SELECT, int for INSERT/UPDATE/DELETE).
+
+Example:
 
 ```
-$query = 'drop table users';
-$success = DB::query($query);
+$result = DB::query('CREATE TABLE logs (id INT PRIMARY KEY, message TEXT)');
+```
+
+## Close
+
+```
+DB::close(): void
+```
+
+Close the database connection.
+
+Example:
+
+```
+DB::close();
 ```
