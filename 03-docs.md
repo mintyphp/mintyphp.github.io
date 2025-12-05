@@ -20,6 +20,7 @@ And there is more information available about specific topics:
 * [Cache](/docs/cache)
 * [Session](/docs/session)
 * [Authentication](/docs/authentication)
+* [I18n](/docs/i18n)
 
 Advanced topics:
 
