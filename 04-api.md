@@ -126,3 +126,17 @@ This is a reference of all global variables and functions.
 | `I18n::weekDay($day):string               ` | *.php         | Get weekday name       |
 | `I18n::monthName($month):string           ` | *.php         | Get month name         |
 | `I18n::datetimeShort($str):string         ` | *.php         | Format datetime short  |
+
+## TOTP (Two-Factor Authentication)
+
+| Function                                       | Location      | Purpose                |
+| ---------------------------------------------- | ------------- | ---------------------- | 
+| `Totp::generateSecret():string               ` | *.php         | Generate TOTP secret   |
+| `Totp::generateURI($comp,$user,$sec):string  ` | *.php         | Generate QR code URI   |
+| `Totp::verify($secret,$otp):bool             ` | *.php         | Verify TOTP code       |
+
+## Firewall
+
+| Function                                    | Location      | Purpose              |
+| ------------------------------------------- | ------------- | -------------------- | 
+| `Firewall::start():void                   ` | *.php         | Start rate limiting  |

@@ -20,4 +20,6 @@ And there is more information available about specific topics:
 * [Cache](/docs/cache)
 * [Session](/docs/session)
 * [Authentication](/docs/authentication)
+* [Totp](/docs/totp)
+* [Firewall](/docs/firewall)
 * [Webservers](/docs/webservers)
