@@ -26,8 +26,6 @@ This is a reference of the all global variables and functions.
 | `Auth::login($username,$password):bool      ` | *.php         | Logging in      |
 | `Auth::logout():bool                        ` | *.php         | Logging out     |
 | `Auth::register($username,$password):bool   ` | *.php         | Adding users    |
-| `Flash::set($type,$message)                 ` | *.php         | Flash message   |
-| `Flash::get():array                         ` | *.php         | Flash message   |
 | `Router::addRoute($req,$loc)                ` | routes.php    | Routing         |
 | `Router::redirect($url)                     ` | *.php         | Redirection     |
 | `Router::json($object)                      ` | *.phtml       | Return JSON     |
