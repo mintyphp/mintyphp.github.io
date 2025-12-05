@@ -20,6 +20,11 @@ And there is more information available about specific topics:
 * [Cache](/docs/cache)
 * [Session](/docs/session)
 * [Authentication](/docs/authentication)
+
+Advanced topics:
+
+* [Webservers](/docs/webservers)
 * [Totp](/docs/totp)
 * [Firewall](/docs/firewall)
-* [Webservers](/docs/webservers)
+* [Analyzer](/docs/analyzer)
+* [Template](/docs/template)

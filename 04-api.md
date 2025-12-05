@@ -140,3 +140,15 @@ This is a reference of all global variables and functions.
 | Function                                    | Location      | Purpose              |
 | ------------------------------------------- | ------------- | -------------------- | 
 | `Firewall::start():void                   ` | *.php         | Start rate limiting  |
+
+## Analyzer
+
+| Function                                    | Location      | Purpose              |
+| ------------------------------------------- | ------------- | -------------------- | 
+| `Analyzer::execute():void                 ` | *.php         | Check code quality   |
+
+## Template
+
+| Function                                       | Location      | Purpose              |
+| ---------------------------------------------- | ------------- | -------------------- | 
+| `Template::render($tpl,$data,$fns=[]):string` | *.php         | Render template      |
