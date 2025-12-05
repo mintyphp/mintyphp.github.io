@@ -7,7 +7,7 @@ menu: true
 
 MintyPHP is simple and easy to install. 
 The minimum requirements are a web server and a copy of MintyPHP, that’s it! 
-MintyPHP will run on a a linux web server running PHP + MySQL + Memcache
+MintyPHP will run on any Linux web server running PHP + MySQL + Memcache
 
 ## Requirements
 
