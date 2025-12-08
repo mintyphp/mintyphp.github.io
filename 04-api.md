@@ -146,8 +146,8 @@ This is a reference of all global variables and functions.
 | Function                                    | Location      | Purpose                |
 | ------------------------------------------- | ------------- | ---------------------- | 
 | `Network::isLocalIP($ipAddress):bool      ` | *.php         | Check local IP         |
-| `Network::ip4Match($ip4,$range):bool      ` | *.php         | Match IPv4 CIDR range  |
-| `Network::ip6Match($ip6,$range):bool      ` | *.php         | Match IPv6 CIDR range  |
+| `Network::ipv4Match($ip4,$range):bool      ` | *.php         | Match IPv4 CIDR range  |
+| `Network::ipv6Match($ip6,$range):bool      ` | *.php         | Match IPv6 CIDR range  |
 
 ## Analyzer
 

@@ -37,10 +37,10 @@ if (Network::isLocalIP('::1')) {
 
 This is useful for determining if a request is coming from the local machine or for security checks.
 
-## ip4Match
+## ipv4Match
 
 ```
-Network::ip4Match(string $ip4, string $range): bool
+Network::ipv4Match(string $ip4, string $range): bool
 ```
 
 Check if an IPv4 address is within a given CIDR range.
@@ -59,17 +59,17 @@ Example:
 
 ```
 // Check if IP is in a specific subnet
-if (Network::ip4Match('192.168.1.50', '192.168.1.0/24')) {
+if (Network::ipv4Match('192.168.1.50', '192.168.1.0/24')) {
     echo "IP is in the 192.168.1.0/24 subnet";
 }
 
 // Check against a single IP (implicitly /32)
-if (Network::ip4Match('10.0.0.1', '10.0.0.1')) {
+if (Network::ipv4Match('10.0.0.1', '10.0.0.1')) {
     echo "IP matches exactly";
 }
 
 // Check if IP is in a larger range
-if (Network::ip4Match('172.16.50.10', '172.16.0.0/12')) {
+if (Network::ipv4Match('172.16.50.10', '172.16.0.0/12')) {
     echo "IP is in the 172.16.0.0/12 range";
 }
 ```
@@ -80,10 +80,10 @@ Common use cases:
 - Network security filtering
 - Geographic or organizational IP range checks
 
-## ip6Match
+## ipv6Match
 
 ```
-Network::ip6Match(string $ip6, string $range): bool
+Network::ipv6Match(string $ip6, string $range): bool
 ```
 
 Check if an IPv6 address is within a given CIDR range.
@@ -102,17 +102,17 @@ Example:
 
 ```
 // Check if IPv6 is in a specific subnet
-if (Network::ip6Match('2001:db8::1', '2001:db8::/32')) {
+if (Network::ipv6Match('2001:db8::1', '2001:db8::/32')) {
     echo "IP is in the 2001:db8::/32 subnet";
 }
 
 // Check against IPv6 loopback
-if (Network::ip6Match('::1', '::1')) {
+if (Network::ipv6Match('::1', '::1')) {
     echo "This is the IPv6 loopback address";
 }
 
 // Check if IP is in a larger range
-if (Network::ip6Match('2001:0db8:85a3::8a2e:0370:7334', '2001:db8::/32')) {
+if (Network::ipv6Match('2001:0db8:85a3::8a2e:0370:7334', '2001:db8::/32')) {
     echo "IP is in the documentation range";
 }
 ```
@@ -135,12 +135,12 @@ $clientIP = $_SERVER['REMOTE_ADDR'];
 $isAllowed = false;
 foreach ($allowedRanges as $range) {
     if (filter_var($clientIP, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-        if (Network::ip4Match($clientIP, $range)) {
+        if (Network::ipv4Match($clientIP, $range)) {
             $isAllowed = true;
             break;
         }
     } elseif (filter_var($clientIP, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6)) {
-        if (Network::ip6Match($clientIP, $range)) {
+        if (Network::ipv6Match($clientIP, $range)) {
             $isAllowed = true;
             break;
         }
@@ -179,7 +179,7 @@ function isInternalNetwork(string $ip): bool {
     ];
     
     foreach ($internalRanges as $range) {
-        if (Network::ip4Match($ip, $range)) {
+        if (Network::ipv4Match($ip, $range)) {
             return true;
         }
     }
