@@ -27,5 +27,6 @@ Advanced topics:
 * [Webservers](/docs/webservers)
 * [Totp](/docs/totp)
 * [Firewall](/docs/firewall)
+* [Network](/docs/network)
 * [Analyzer](/docs/analyzer)
 * [Template](/docs/template)
