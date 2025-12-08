@@ -141,6 +141,14 @@ This is a reference of all global variables and functions.
 | ------------------------------------------- | ------------- | -------------------- | 
 | `Firewall::start():void                   ` | *.php         | Start rate limiting  |
 
+## Network
+
+| Function                                    | Location      | Purpose                |
+| ------------------------------------------- | ------------- | ---------------------- | 
+| `Network::isLocalIP($ipAddress):bool      ` | *.php         | Check local IP         |
+| `Network::ip4Match($ip4,$range):bool      ` | *.php         | Match IPv4 CIDR range  |
+| `Network::ip6Match($ip6,$range):bool      ` | *.php         | Match IPv6 CIDR range  |
+
 ## Analyzer
 
 | Function                                    | Location      | Purpose              |
